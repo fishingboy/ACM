@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <cmath>
 using std::cin;
 using std::cout;
@@ -6,9 +7,9 @@ using std::cout;
 int main()
 {
     long q,s;
-    long d,tall,t;
+    long d,t;
     long i,j,n;
-    long total,totalsum;
+    double total,totalsum, tall;
 
 	while (cin >>q>>s)
 	{
@@ -26,7 +27,7 @@ int main()
 			while (1)
 			{
 				t++;
-				d=tall%i;
+				d=((long)tall)%i;
 				if (d!=0) break;
 				tall=tall/i;
 				if (tall==1 && pow(i-1,t)==s )
@@ -37,16 +38,17 @@ int main()
 					total=totalsum=0;
 					for (j=1;j<=t;j++)
 					{
-						tall= q /(long)( pow(n+1,j-1));
-						total=total+ (long)pow(n,j-1);
-						totalsum=totalsum+tall* (long)pow(n,j-1);
+						tall= q /( pow(n+1,j-1));
+						total=total+ pow(n,j-1);
+						totalsum=totalsum+tall* pow(n,j-1);
 					}
 					totalsum=totalsum+s;
 					break;
 				}
 			}
 		}
-		cout <<total<<" "<<totalsum<<"\n";
+		// cout <<total<<" "<<totalsum<<"\n";
+		printf("%0.lf %.0lf", total, totalsum);
 	}
     return 0;
 }
