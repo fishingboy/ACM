@@ -10,7 +10,7 @@ int main()
    int p,n,l;
    char s[100];
 
-   while (gets(s),s[0]!='#')
+   while (scanf("%s", s) && s[0]!='#')
    {
         last=strlen(s)-1;
         l=strlen(s)-1;
@@ -38,7 +38,7 @@ int main()
                 {
                     if (s[j]>s[k])
                     {
-                    p=s[j];s[j]=s[k];s[k]=p;
+                       p=s[j];s[j]=s[k];s[k]=p;
                     }
                 }
             }
