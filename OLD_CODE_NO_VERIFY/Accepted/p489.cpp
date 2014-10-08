@@ -38,7 +38,6 @@ main()
         }
 
         cout << "Round " << round << "\n";
-        cout << wrong << "   " << right << "\n";
         if (right == ls)
             cout << "You win.\n";
         else if (wrong >= 7)
