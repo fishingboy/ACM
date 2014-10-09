@@ -8,7 +8,7 @@ using namespace std;
 void pid(char id[1000])
 {
     int i;
-    for (i = 0; i <= strlen(id) - 1; i ++)
+    for (i = 0; i <= strlen(id) - 1; i++)
     {
         if (id[i] != ' ') cout << id[i];
     }
@@ -21,17 +21,18 @@ void iscorrect(char id[1000])
     int sum[10] = {0};
     char m;
 
-    for (i = 0; i <= strlen(id) - 1; i ++)
+    for (i = 0; i <= strlen(id) - 1; i++)
     {
         m = id[i];
         if (isdigit(m) != 0)
         {
-            t ++;
+            t++;
             if (t > 10) break;
             sum[t] = m - '0';
-        } else if (m == 'X')
+        }
+        else if (m == 'X')
         {
-            t ++;
+            t++;
             if (t > 10) break;
             sum[t] = 10;
         }
@@ -41,13 +42,14 @@ void iscorrect(char id[1000])
     {
         pid(id);
         cout << " is incorrect.\n";
-    } else
+    }
+    else
     {
-        for (i = 2; i <= 10; i ++)
+        for (i = 2; i <= 10; i++)
         {
             sum[i] += sum[i - 1];
         }
-        for (i = 2; i <= 10; i ++)
+        for (i = 2; i <= 10; i++)
         {
             sum[i] += sum[i - 1];
         }
