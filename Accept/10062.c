@@ -8,12 +8,17 @@ int main()
     int p;
     int asum[1000];
     int i, j, t;
+    int case_n = 0;
 
-    while (gets(s))
+    while (fgets(s, 1024, stdin))
     {
+        if (case_n > 0) printf("\n");
+        case_n++;
+
+
         if (strlen(s) == 0) continue;
         i = j = t = 0;
-        for (i = 0; i <= strlen(s) - 1; i++)
+        for (i = 0; i < strlen(s) - 1; i++)
         {
             for (j = 1; j <= t; j++)
             {
@@ -61,7 +66,6 @@ int main()
         {
             printf("%d %d\n", a[i], asum[i]);
         }
-        printf("\n");
     }
     return 0;
 }
