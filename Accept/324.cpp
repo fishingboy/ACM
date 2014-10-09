@@ -5,9 +5,9 @@
 
 using namespace std;
 
-int sum[9];
+int sum[10];
 
-void pp(char x[], int l)
+void pp(char *x, int l)
 {
     int i, len, t;
     len = strlen(x);
@@ -24,25 +24,20 @@ void pp(char x[], int l)
     x[l] = 0;
 }
 
-int sval(char m)
-{
-    return m - '0';
-}
-
-void lmul(char a[], int b, char c[], int l)
+void lmul(char *a, int b, char *c, int l)
 {
     int i;
     unsigned long d, cy = 0;
     for (i = l - 1; i >= 0; i --)
     {
-        d = sval(a[i]);
+        d = a[i] - '0';
         c[i] = (d * b + cy) % 10 + '0';
         cy = (d * b + cy) / 10;
     }
     c[l] = 0;
 }
 
-void digadd(char s[])
+void digadd(char *s)
 {
     int i, be = 0;
     char m;
@@ -74,7 +69,7 @@ void digadd(char s[])
     }
 }
 
-void chs(char s1[], char s2[])
+void chs(char *s1, char *s2)
 {
     int i;
     for (i = 0; i <= strlen(s2); i ++)
@@ -92,7 +87,7 @@ int ilen(int i)
 
 }
 
-main()
+int main()
 {
     char a[2000], ans[2000];
 
@@ -101,7 +96,7 @@ main()
     int i;
     int maxl;
 
-    while (scanf("%d\n", &n))
+    while (scanf("%d", &n) == 1)
     {
         if (n == 0) break;
         a[0] = '1';
@@ -123,4 +118,5 @@ main()
         }
         printf("\n");
     }
+    return 0;
 }
