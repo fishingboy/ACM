@@ -4,18 +4,18 @@
 
 using namespace std;
 
-long val(double n, double limit)
+long val(long n, long limit)
 {
     long t;
     for (t = 1; n != 1; t++)
     {
         if (fmod(n, 2) == 0)
         {
-            n /= 2.0;
+            n /= 2;
         }
         else
         {
-            n = n * 3.0 + 1.0;
+            n = n * 3 + 1;
         }
         if (n > limit) break;
     }
@@ -25,15 +25,14 @@ long val(double n, double limit)
 main()
 {
     int t = 0;
-    unsigned long v;
-    double a, limit;
+    long v, a, limit;
 
-    while (cin >> a >> limit != NULL)
+    while (cin >> a >> limit)
     {
         t++;
         if (a < 0) break;
         v = val(a, limit);
-        cout << "Case 1: A = " << a << ", limit = " << limit;
+        cout << "Case " << t << ": A = " << a << ", limit = " << limit;
         cout << ", number of terms = " << v << "\n";
     }
 }
