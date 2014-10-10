@@ -11,6 +11,8 @@ main()
     int st[100];
     int i, j, l;
     int t = 0, max = 0;
+
+    /*freopen("490.in", "r", stdin);*/
     while (gets(ss))
     {
         t++;
@@ -22,8 +24,8 @@ main()
         st[t] = strlen(ss);
         if (strlen(ss) > max) max = strlen(ss);
         if (l == 0) st[t] = 0;
-        if (t == 3) break;
     }
+
     for (i = 0; i <= max - 1; i++)
     {
         for (j = t; j >= 1; j--)
