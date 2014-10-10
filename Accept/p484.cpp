@@ -5,12 +5,12 @@ using namespace std;
 
 main()
 {
-    int a[1000];
-    int asum[1000];
+    long a[10000];
+    long asum[10000];
     long t = 0;
-    int n, i, j;
+    long n, i, j;
 
-    while (cin >> n != NULL)
+    while (cin >> n)
     {
         for (i = 1; i <= t; i++)
         {
