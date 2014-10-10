@@ -7,7 +7,7 @@
 #define int_max 10000
 int a[100], b[100], ans[200];
 
-void bigMul();
+void bigMul(char *s1, char *s2);
 int charToint(char *s, int *a);
 
 int main()
@@ -18,11 +18,18 @@ int main()
     for (i = 0; i < 100; i++) a[i] = b[i] = 0;
     for (i = 0; i < 200; i++) ans[i] = 0;
 
+    freopen("10106.in", "r", stdin);
+    freopen("10106.out", "w", stdout);
     while (scanf("%s %s", s1, s2) == 2)
     {
         bigMul(s1, s2);
     }
     return 0;
+}
+
+void print_array(int *a)
+{
+    
 }
 
 /* BigNumber MUL*/
@@ -38,6 +45,7 @@ void bigMul(char *s1, char *s2)
         for (j = 0; j <= bi; j++)
         {
             temp = a[i] * b[j];
+            printf("temp = %d\n", temp);
             ans[i + j] += temp % int_max;
             ans[i + j + 1] += temp / int_max;
         }
