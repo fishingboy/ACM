@@ -28,8 +28,13 @@ main()
     int aa, bb;
     char a[15];
     char b[15];
-    while (cin >> a >> b, strcmp(a, "0") != 0)
+
+    /*freopen("10035.in", "r", stdin);*/
+
+    while (cin >> a >> b)
     {
+        if (strcmp(a, "0") == 0 && strcmp(b, "0") == 0) break;
+
         pp(a);
         pp(b);
         f = sum = 0;
