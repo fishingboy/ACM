@@ -6,14 +6,14 @@ using namespace std;
 
 main()
 {
-    long n;
+    long i, n;
     int len;
     char s[1000];
-    cin >>n;
-
-    while (cin >> n != NULL)
+    
+    cin >> n;
+    for (i = 1; i <= n; i++)
     {
-        sprintf(s, "%ld", n);
+        cin >> s;
         len = strlen(s);
         if (strcmp("1", s) == 0 || strcmp("4", s) == 0 || strcmp("78", s) == 0)
         {
